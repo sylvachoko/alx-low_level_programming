@@ -7,16 +7,25 @@
 
 int main(void)
 {
-int i, a = 0, b = 1;
-int c = a + b;
+	long int i, j, k, next;
 
-for (i = 3; i <= 100; ++i)
-{
-printf("%d, ", c);
-a = b;
-b = c;
-c = a + b;
-}
-printf("\n");
-return (0);
+	j = 1;
+
+	k = 2;
+
+	for (i = 1; i <= 50; ++i)
+	{
+		if (j != 20365011074)
+		{
+			printf("%ld, ", j);
+		} else
+		{
+			printf("%ld\n", j);
+		}
+		next = j + k;
+		j = k;
+		k = next;
+	}
+
+	return (0);
 }
