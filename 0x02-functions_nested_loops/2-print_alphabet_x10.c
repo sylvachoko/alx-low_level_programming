@@ -1,14 +1,15 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
- * main -  prints the alphabet in lowercase 10 times
+ * print_alphabet_x10 -  prints the alphabet in lowercase 10 times
  *
  * Description: a program that prints the alphabet in lowercase 10 times
  *
  * Return: (0)
  */
 
-int main(void)
+void print_alphabet_x10(void)
 {
 char ch = 'a';
 int j = 0;
@@ -20,6 +21,5 @@ putchar(ch);
 putchar('\n');
 j++;
 }
-return (0);
 }
 
