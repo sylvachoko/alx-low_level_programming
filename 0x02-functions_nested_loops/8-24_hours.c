@@ -4,9 +4,6 @@
 /**
  * jack_bauer - prints every minute of the day of Jack Bauer
  *
- * @n: prints every minute of the day of Jack Bauer
- *
- * Return: value of last digit
  */
 
 void jack_bauer(void)
