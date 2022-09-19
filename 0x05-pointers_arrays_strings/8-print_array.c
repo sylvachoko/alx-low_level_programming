@@ -2,19 +2,27 @@
 #include <stdio.h>
 
 /**
- * char *_strcpy - a function that copies the string pointed to by src
- * @dest: copy to
- * @src: copy from
- * Return: string
+ * print_array - print `n` elements of an array of integers
+ * @a: int type array pointer
+ * @n: int type integer
+ * Description: Numbers must be separated by comma and space.
+ * Numbers should be displayed in the same order they are stored in array.
+ * You can only use _putchar to print.
  */
-char *_strcpy(char *dest, char *src)
+
+void print_array(int *a, int n)
 {
-	int i = 0;
+	int i;
 
-	for (src[i] != '\0'; i++)
+	i = 0;
+	for (n--; n >= 0; n--, i++)
 	{
-		dest[i] = src[i];
+		printf("%d", a[i]);
+		if (n > 0)
+		{
+			printf(", ");
+		}
 	}
-	return (dest);
-}
+	printf("\n");
 
+}
