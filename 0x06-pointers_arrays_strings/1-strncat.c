@@ -22,4 +22,3 @@ char *_strncat(char *dest, char *src, int n)
 		if (src[co] == '\0')
 			co = n;
 	}
-
