@@ -2,103 +2,46 @@
 #include "main.h"
 
 /**
- *powB - raises the number base to power power
- *@base : the base
- *@power : the power
- *Return
- */
-
-int powB(unsigned int base, int power)
-{
-	int i, prod = 1;
-
-	for (i = 0; i < power; i++)
-	{
-		prod = prod * base;
-	}
-	return (prod);
-}
-
-/**
- *numLength - returns the lenth of string
- *@num : operand number
- *Return: number of digits
- */
-int numLength(unsigned int num)
-{
-	int length = 0;
-
-	if (!num)
-		return (1);
-
-	while (num)
-	{
-		num = num / 10;
-		length += 1;
-	}
-
-	return (length);
-}
-
-/**
- *printnchar - Print a number of any digit
- *@n : takes an input number
+ * print_number - takes an integer and prints it with _putchar
+ * @n: integer to print
  *
- *
- */
-void printnchar(int n)
-{
-	int length, j, k, digit1, tmp2;
-	unsigned int num;
-
-	if (n < 0)
-	{
-		n *= -1;
-		_putchar('-');
-	}
-	num = n;
-	length = numLength(num), j = length - 1, k, digit1, tmp2;
-	if (num == 0)
-		_putchar(48);
-	else
-	{
-		while (j >= 0)
-		{
-			if (num % powB(10, j) == 0 && j != 0)
-			{
-				_putchar(48 + num / powB(10, j));
-				for (k = j; k > 0; k--)
-					_putchar(48);
-				j = -1;
-			}
-			else
-			{
-				digit1 = num / powB(10, j);
-				_putchar(digit1 + 48);
-
-				tmp2 = num;
-				num -= powB(10, j) * digit1;
-				if (numLength(tmp2) - numLength(num) == 2)
-				{
-					_putchar(48);
-					j--;
-				}
-				j--;
-			}
-		}
-	}
-}
-
-
-
-
-/**
- * print_number - prints out any integer with only _putchar
- * @n: integer to be printed
- * Return: 0
+ * Return: void
  */
 void print_number(int n)
 {
+	int a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
+	int s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
-	printnchar(n);
+	a0 = n / 1000000000; s0 = a0; a1 = (n / 100000000) % 10; s1 = s0 + a1;
+	a2 = (n / 10000000) % 10; s2 = s1 + a2;
+	a3 = (n / 1000000) % 10; s3 = s2 + a3;
+	a4 = (n / 100000) % 10; s4 = s3 + a4;
+	a5 = (n / 10000) % 10; s5 = s4 + a5;
+	a6 = (n / 1000) % 10; s6 = s5 + a6; a7 = (n / 100) % 10; s7 = s6 + a7;
+	a8 = (n / 10) % 10; s8 = s7 + a8; a9 = n % 10;
+	if (n < 0)
+	{
+		_putchar('-');
+		a0 *= -1; a1 *= -1; a2 *= -1; a3 *= -1; a4 *= -1;
+		a5 *= -1; a6 *= -1; a7 *= -1; a8 *= -1; a9 *= -1;
+	}
+	if (s0 != 0)
+		_putchar('0' + a0);
+	if (s1 != 0)
+		_putchar('0' + a1);
+	if (s2 != 0)
+		_putchar('0' + a2);
+	if (s3 != 0)
+		_putchar('0' + a3);
+	if (s4 != 0)
+		_putchar('0' + a4);
+	if (s5 != 0)
+		_putchar('0' + a5);
+	if (s6 != 0)
+		_putchar('0' + a6);
+	if (s7 != 0)
+		_putchar('0' + a7);
+	if (s8 != 0)
+		_putchar('0' + a8);
+	_putchar('0' + a9);
 }
